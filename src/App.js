@@ -2,9 +2,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
 import { useState } from "react";
-import { Provider } from "react-redux"
-import { PersistGate } from "redux-persist/integration/react"
-import { store, persistor } from "./redux/store"
 import Home from './Components/Home';
 import AboutApp from "./Components/AboutApp/Index";
 import AboutAuthor from "./Components/AboutAuthor";
@@ -23,8 +20,6 @@ function App() {
 
   return (
     <div className="App">
-    <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
       <Router>
       <div className="wrapper">
         <div className={Toggle ? "Sidebar active" : "Sidebar"}>
@@ -50,8 +45,6 @@ function App() {
         </div>        
       </div>
       </Router>
-    </PersistGate>
-    </Provider>
     </div>
   );
 }
